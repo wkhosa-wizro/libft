@@ -6,7 +6,7 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/30 17:00:30 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/05 08:22:48 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/05 08:48:40 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,13 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	
 	s1 = (char *)dest;
 	s2 = (char *)src;
-	while ((len--) + 1 > 0)
-		s1[len] = s2[len];
+	if (s2 < s1)
+	{
+		while (len--)
+			s1[len] = s2[len];
+	}
+	else
+		ft_memcpy(s1, s2, len);
 
 	return (dest);
 }
