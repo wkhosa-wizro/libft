@@ -6,7 +6,7 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 08:02:19 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/08/30 17:07:09 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/05 16:37:27 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <string.h>
 # include <stdlib.h>
 
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
