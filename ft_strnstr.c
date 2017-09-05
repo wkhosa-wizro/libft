@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/17 11:03:45 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/08/17 11:17:07 by wkhosa           ###   ########.fr       */
+/*   Created: 2017/09/05 11:13:07 by wkhosa            #+#    #+#             */
+/*   Updated: 2017/09/05 11:48:36 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*start;
-	char	*end;
-	size_t	size;
+	unsigned int	index;
+	unsigned int	index_big;
+	size_t			lit_len;
 
-	end = ft_strchr(big, '\0');
-//	start = ft_strchr(big, *little);
-	start = (char *)big;
-	size = 0;
-	if (ft_strlen(little) == 0)
-		return ((char *)big);
-	if (start == NULL)
-		return (NULL);
-	while (start != end && size < len)
+	index = 0;
+	lit_len = ft_strlen(little);
+	if (lit_len == 0)
+		return ((char*)big);
+	while ( big[index] && (index + lit_len) <= len)
 	{
-		if (ft_strncmp(little, start, ft_strlen(little)) == 0)
-			return (start);
-		start++;
-		size++;
+		index_big = 0;
+		while (little[index_big] == big[index_big + index])
+		{
+			if (index_big == (lit_len - 1))
+				return ((char*)big + index);
+			index_big++;
+		}
+		index++;
 	}
-	return NULL;
+	return (NULL);
 }
