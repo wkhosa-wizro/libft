@@ -6,7 +6,7 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 08:02:19 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/05 16:37:27 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/06 14:39:41 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,15 @@ int		ft_tolower(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_whitespace(const char *str);
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
+void	ft_strdel(char **as);
+void	ft_strclr(char *s);
+char	*ft_itoa(int n);
+void	ft_putendl(const char *s);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 #endif

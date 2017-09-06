@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/30 15:14:18 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/06 12:53:15 by wkhosa           ###   ########.fr       */
+/*   Created: 2017/09/06 13:21:59 by wkhosa            #+#    #+#             */
+/*   Updated: 2017/09/06 13:26:27 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_strdel(char **as)
 {
-	char	*mem;
-	size_t	index;
-
-	index = 0;
-	mem = s;
-	while (index < n)
-		mem[index++] = 0;
+	ft_memdel((void **)as);
 }

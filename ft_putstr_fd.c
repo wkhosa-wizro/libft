@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/30 15:14:18 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/06 12:53:15 by wkhosa           ###   ########.fr       */
+/*   Created: 2017/09/06 14:25:13 by wkhosa            #+#    #+#             */
+/*   Updated: 2017/09/06 14:31:22 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	char	*mem;
-	size_t	index;
+	int		index;
 
 	index = 0;
-	mem = s;
-	while (index < n)
-		mem[index++] = 0;
+	if (s == NULL)
+		return ;
+	while (s[index])
+		ft_putchar_fd(s[index++], fd);
 }

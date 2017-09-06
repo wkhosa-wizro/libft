@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/30 15:14:18 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/06 12:53:15 by wkhosa           ###   ########.fr       */
+/*   Created: 2017/09/06 13:26:36 by wkhosa            #+#    #+#             */
+/*   Updated: 2017/09/06 13:34:35 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_strclr(char *s)
 {
-	char	*mem;
 	size_t	index;
 
 	index = 0;
-	mem = s;
-	while (index < n)
-		mem[index++] = 0;
+	if (s == NULL)
+		return ;
+
+	while (s[index] != '\0')
+		s[index++] = '\0';
+
 }
