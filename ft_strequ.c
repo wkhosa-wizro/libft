@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_whitespace.c                                    :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/07 15:39:01 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/07 15:39:11 by wkhosa           ###   ########.fr       */
+/*   Created: 2017/09/07 13:52:16 by wkhosa            #+#    #+#             */
+/*   Updated: 2017/09/07 14:03:59 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_whitespace(const char *str)
+#include "libft.h"
+
+int		ft_strequ(char const *s1, char const *s2)
 {
-	int	index;
-	int	k;
-	char	*whitespace;
-
-	whitespace = "\a\b\f\n\r\t\v ";
-	index = 0;
-	k = 0;
-	while (whitespace[k] != '\0')
-	{
-		if(whitespace[k] == str[index])
-		{
-			k = 0;
-			index++;
-		}
-		k++;
-	}
-	return (index);
+	if (s1 == NULL || s2 == NULL)
+		return (0);
+	if (ft_strcmp(s1,s2))
+		return (0);
+	else
+		return (1);
 }
-

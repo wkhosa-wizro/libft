@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_whitespace.c                                    :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/07 15:39:01 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/07 15:39:11 by wkhosa           ###   ########.fr       */
+/*   Created: 2017/09/07 13:42:14 by wkhosa            #+#    #+#             */
+/*   Updated: 2017/09/07 13:52:04 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_whitespace(const char *str)
+#include "libft.h"
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	index;
-	int	k;
-	char	*whitespace;
+	char	*str;
+	size_t	len;
 
-	whitespace = "\a\b\f\n\r\t\v ";
-	index = 0;
-	k = 0;
-	while (whitespace[k] != '\0')
-	{
-		if(whitespace[k] == str[index])
-		{
-			k = 0;
-			index++;
-		}
-		k++;
-	}
-	return (index);
+	if (s == NULL)
+		return (NULL);
+	len = ft_strlen(s);
+	if (!(str = ft_strnew(len)))
+		return (NULL);
+	while (len--)
+		str[len] = f(len,s[len]);
+	return (str);
 }
-

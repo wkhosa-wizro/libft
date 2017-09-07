@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_whitespace.c                                    :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/07 15:39:01 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/07 15:39:11 by wkhosa           ###   ########.fr       */
+/*   Created: 2017/09/07 13:18:54 by wkhosa            #+#    #+#             */
+/*   Updated: 2017/09/07 13:24:46 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_whitespace(const char *str)
+#include "libft.h"
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int	index;
-	int	k;
-	char	*whitespace;
+	unsigned	int	i;
 
-	whitespace = "\a\b\f\n\r\t\v ";
-	index = 0;
-	k = 0;
-	while (whitespace[k] != '\0')
-	{
-		if(whitespace[k] == str[index])
-		{
-			k = 0;
-			index++;
-		}
-		k++;
-	}
-	return (index);
+	i = 0;
+	if (s == NULL)
+		return ;
+	while (*s)
+		f(i++, s++);
 }
-

@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_whitespace.c                                    :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/07 15:39:01 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/07 15:39:11 by wkhosa           ###   ########.fr       */
+/*   Created: 2017/09/07 15:18:14 by wkhosa            #+#    #+#             */
+/*   Updated: 2017/09/07 15:28:32 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_whitespace(const char *str)
+#include "libft.h"
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	index;
-	int	k;
-	char	*whitespace;
+	char	*sjoin;
+	size_t	len;
 
-	whitespace = "\a\b\f\n\r\t\v ";
-	index = 0;
-	k = 0;
-	while (whitespace[k] != '\0')
-	{
-		if(whitespace[k] == str[index])
-		{
-			k = 0;
-			index++;
-		}
-		k++;
-	}
-	return (index);
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	if (!(sjoin = ft_strnew(len)))
+		return (NULL);
+	ft_strcat(sjoin, s1);
+	return (ft_strcat(sjoin, s2));
 }
-
