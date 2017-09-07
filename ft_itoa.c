@@ -6,7 +6,7 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/06 13:34:44 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/06 14:04:35 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/07 19:59:01 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int		ft_nbrlen(long value)
 	len = 0;
 	if (value < 0)
 		sign++;
+	if (value == 0)
+		return (1);
 	while (value)
 	{
 		value /= 10;
@@ -51,6 +53,7 @@ char	*ft_itoa(int n)
 		ft_strcpy(snbr, "-2147483648");
 		return (snbr);
 	}
+	snbr[len] = '\0';
 	while (len--)
 	{
 		snbr[len] = value % 10 + '0';
