@@ -6,7 +6,7 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/17 12:03:15 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/07/17 15:54:21 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/08 02:39:56 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	len;
 
 	len = ft_strlen(s);
-	s += len; 
+	s += len;
 	while (len + 1 > 0)
 	{
 		if (*s == c)
@@ -27,16 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-/*
-int strCmp( const char *s1, const char *s2 )
-{	
-	const unsigned char *p1 = ( const unsigned char * )s1;
-	const unsigned char *p2 = ( const unsigned char * )s2;
-
-	while ( *p1 && *p1 == *p2 )
-		++p1, ++p2;
-
-	return ( *p1 > *p2 ) - ( *p2  > *p1 );
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/17 09:32:30 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/08/17 09:42:09 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/08 02:43:03 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ char	*ft_strncpy(char *dest, const char *src, size_t len)
 		else
 			dest[index++] = '\0';
 	}
-
 	return (dest);
 }

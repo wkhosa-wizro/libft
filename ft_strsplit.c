@@ -5,67 +5,73 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/07 20:03:09 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/07 22:08:16 by wkhosa           ###   ########.fr       */
+/*   Created: 2017/09/08 00:30:15 by wkhosa            #+#    #+#             */
+/*   Updated: 2017/09/08 04:52:33 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	ft_count_words(char *s, char c)
+static	char	*get_word(char **s, char c)
 {
-	size_t	nbr_words;
+	char	*temp;
+	size_t	len;
+
+	if (*s == NULL)
+		return (NULL);
+	while (**s == c && **s != '\0')
+		(*s)++;
+	temp = (*s);
+	len = 0;
+	while (*temp != c && *temp != '\0')
+	{
+		temp++;
+		len++;
+	}
+	temp = ft_strsub(*s, 0, len);
+	*s = (*s) + len;
+	return (temp);
+}
+
+static	int		count_wd(char *s, char c)
+{
+	int		nbr;
 	int		flag;
 
-	nbr_words = 0;
+	nbr = 0;
 	while (*s != '\0')
 	{
 		flag = 0;
-		while (*s != c )
+		while (*s != c && *s != '\0')
 		{
 			flag++;
 			if (flag == 1)
-				nbr_words++;
+				nbr++;
 			s++;
 		}
 		if (flag == 0)
 			s++;
 	}
-	return (nbr_words);
+	return (nbr);
 }
 
-static	char	*get_word(char **s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	char	*word;
+	char	**split;
 	char	*temp;
-	size_t	len;
-
-	len = 0;
-	while (**s == c && **s != '\0')
-		(*s)++;
-	temp = ft_strchr(*s, (int)c);
-	len = temp - (*s);
-	if (!(word = ft_strnew(len)))
-		return (NULL);
-	ft_strncpy(word, *s, len);
-	s  = s + len;
-	return (word);
-}
-
-char	**ft_strsplit(char const *s, char c)
-{
-	char	**arry;
-	char	*temp;
-	size_t	arrylen;
+	int		nbr_words;
 	int		index;
 
-	temp = (char *)s;
-	arrylen = ft_count_words(temp, c);
-	if (!(arry = (char **)malloc(sizeof(char) * arrylen + 1)))
+	if (!s)
 		return (NULL);
-	arry[arrylen] = NULL;
+	temp = (char *)s;
+	nbr_words = count_wd(temp, c);
+	if (!(split = ft_strnewap(nbr_words)))
+		return (NULL);
 	index = 0;
-	while (arrylen--)
-		arry[index++] = get_word(&temp, c);
-	return (arry);
+	while (nbr_words--)
+	{
+		split[index++] = get_word(&temp, c);
+	}
+	return (split);
 }

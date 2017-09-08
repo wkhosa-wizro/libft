@@ -6,7 +6,7 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/05 09:07:57 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/05 09:18:16 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/08 02:37:04 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ char	*ft_strstr(const char *big, const char *little)
 			return (start);
 		start++;
 	}
-	return NULL;
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/30 14:58:53 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/08/30 15:13:27 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/08 02:30:20 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ void	*ft_memset(void *b, int c, size_t len)
 	{
 		mem[index++] = (unsigned char)c;
 	}
-
 	return (b);
 }

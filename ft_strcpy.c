@@ -6,7 +6,7 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/17 09:24:29 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/08/17 09:30:47 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/08 02:51:09 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,5 @@ char	*ft_strcpy(char *dest, const char *src)
 	index = 0;
 	while ((dest[index++] = *src++))
 		;
-
 	return (dest);
 }

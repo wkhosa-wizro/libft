@@ -6,7 +6,7 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/05 11:13:07 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/05 11:48:36 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/08 02:40:48 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	lit_len = ft_strlen(little);
 	if (lit_len == 0)
 		return ((char*)big);
-	while ( big[index] && (index + lit_len) <= len)
+	while (big[index] && (index + lit_len) <= len)
 	{
 		index_big = 0;
 		while (little[index_big] == big[index_big + index])

@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strnewap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/08 02:55:50 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/08 02:56:03 by wkhosa           ###   ########.fr       */
+/*   Created: 2017/09/08 00:44:56 by wkhosa            #+#    #+#             */
+/*   Updated: 2017/09/08 04:00:15 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char	**ft_strnewap(size_t size)
 {
-	size_t	len;
+	char	**str;
 
-	len = ft_strlen(s1);
-	while ((*(s1 + len++) = *s2++))
-		;
-	return (s1);
+	if (!(str = (char **)malloc(sizeof(char*) * size + 1)))
+		return (NULL);
+	ft_bzero(str, size + 1);
+	str[size] = NULL; 
+	return (str);
 }

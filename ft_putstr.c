@@ -6,7 +6,7 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/17 08:27:24 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/08/15 15:16:12 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/08 02:35:13 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ void	ft_putstr(char const *s)
 	i = 0;
 	if (s == NULL)
 	{
-		write(1,"NULL", 4 );
+		write(1, "NULL", 4);
 		return ;
 	}
-	
 	while (s[i] != '\0')
 	{
 		ft_putchar(s[i]);

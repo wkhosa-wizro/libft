@@ -6,14 +6,14 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 15:39:01 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/07 15:39:11 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/08 03:01:01 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_whitespace(const char *str)
 {
-	int	index;
-	int	k;
+	int		index;
+	int		k;
 	char	*whitespace;
 
 	whitespace = "\a\b\f\n\r\t\v ";
@@ -30,4 +30,3 @@ int	ft_whitespace(const char *str)
 	}
 	return (index);
 }
-

@@ -6,7 +6,7 @@
 #    By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/25 10:22:54 by wkhosa            #+#    #+#              #
-#    Updated: 2017/09/07 21:18:02 by wkhosa           ###   ########.fr        #
+#    Updated: 2017/09/08 00:46:48 by wkhosa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC = ft_putchar.c ft_putstr.c ft_strcmp.c ft_strlen.c ft_putnbr.c ft_isalpha.c 
 	  ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c ft_strclr.c ft_itoa.c \
 	  ft_putendl.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 	  ft_striter.c ft_striteri.c ft_strmap.c ft_strmapi.c ft_strequ.c ft_strnequ.c \
-	  ft_strsub.c ft_strjoin.c ft_isspace.c ft_strtrim.c ft_strsplit.c
+	  ft_strsub.c ft_strjoin.c ft_isspace.c ft_strtrim.c ft_strsplit.c ft_strnewap.c \
 
 OBJ = ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_putnbr.o ft_isalpha.o ft_isdigit.o ft_isalnum.o \
 	  ft_toupper.o ft_tolower.o ft_isascii.o ft_strncmp.o ft_atoi.o  ft_isprint.o\
@@ -36,7 +36,7 @@ OBJ = ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_putnbr.o ft_isalpha.o 
 	  ft_memalloc.o ft_memdel.o ft_strnew.o ft_strdel.o ft_strclr.o ft_itoa.o \
 	  ft_putendl.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o \
 	  ft_striter.o ft_striteri.o ft_strmap.o ft_strmapi.o ft_strequ.o ft_strnequ.o \
-	  ft_strsub.o ft_strjoin.o ft_isspace.o ft_strtrim.o ft_strsplit.o
+	  ft_strsub.o ft_strjoin.o ft_isspace.o ft_strtrim.o ft_strsplit.o ft_strnewap.o
 
 all: $(NAME)
 $(NAME):

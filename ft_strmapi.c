@@ -6,7 +6,7 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 13:42:14 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/07 13:52:04 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/08 02:48:13 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!(str = ft_strnew(len)))
 		return (NULL);
 	while (len--)
-		str[len] = f(len,s[len]);
+		str[len] = f(len, s[len]);
 	return (str);
 }

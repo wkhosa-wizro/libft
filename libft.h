@@ -6,7 +6,7 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 08:02:19 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/07 21:18:40 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/08 00:47:42 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int		ft_whitespace(const char *str);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
+char	**ft_strnewap(size_t size);
 void	ft_strdel(char **as);
 void	ft_strclr(char *s);
 char	*ft_itoa(int n);

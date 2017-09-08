@@ -6,13 +6,13 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/06 13:34:44 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/07 19:59:01 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/08 04:53:06 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_nbrlen(long value)
+static	int		ft_nbrlen(long value)
 {
 	int		len;
 	int		sign;
