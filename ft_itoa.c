@@ -6,16 +6,16 @@
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/06 13:34:44 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/08 04:53:06 by wkhosa           ###   ########.fr       */
+/*   Updated: 2017/09/09 13:51:44 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_nbrlen(long value)
+static	int	ft_nbrlen(long value)
 {
-	int		len;
-	int		sign;
+	int			len;
+	int			sign;
 
 	sign = 0;
 	len = 0;
@@ -31,33 +31,37 @@ static	int		ft_nbrlen(long value)
 	return (len + sign);
 }
 
-char	*ft_itoa(int n)
+static	int	ft_topositive(int *n)
+{
+	if (*n < 0)
+	{
+		*n = -(*n);
+		return (1);
+	}
+	return (0);
+}
+
+char		*ft_itoa(int n)
 {
 	char	*snbr;
 	int		len;
 	int		sign;
-	long	value;
 
-	value = (long)n;
 	sign = 0;
-	len = ft_nbrlen(value);
-	if (!(snbr = (char *)malloc(sizeof(char) * len + 1)))
+	len = ft_nbrlen(n);
+	if (!(snbr = ft_strnew(len)))
 		return (NULL);
-	if (value < 0)
-	{
-		value = -value;
+	if (ft_topositive(&n))
 		sign++;
-	}
-	if (value > 2147483648)
+	if (n > 2147483647 || n < -2147483647)
 	{
 		ft_strcpy(snbr, "-2147483648");
 		return (snbr);
 	}
-	snbr[len] = '\0';
 	while (len--)
 	{
-		snbr[len] = value % 10 + '0';
-		value /= 10;
+		snbr[len] = n % 10 + '0';
+		n /= 10;
 	}
 	if (sign)
 		snbr[0] = '-';
