@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_whitespace.c                                    :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/07 15:39:01 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/09 19:14:20 by wkhosa           ###   ########.fr       */
+/*   Created: 2017/11/20 13:25:38 by wkhosa            #+#    #+#             */
+/*   Updated: 2017/11/20 14:00:42 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_whitespace(const char *str)
-{
-	int		index;
-	int		k;
-	char	*whitespace;
+#include "libft.h"
 
-	whitespace = "\a\b\f\n\r\t\v ";
-	index = 0;
-	k = 0;
-	while (whitespace[k] != '\0')
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+{
+	t_list	*lst;
+	t_list	*nlst;
+
+	lst = *alst;
+	while (lst)
 	{
-		if (whitespace[k] == str[index])
-		{
-			k = 0;
-			index++;
-		}
-		k++;
+		nlst = lst->next;
+		del(lst->content, lst->content_size);
+		free(lst);
+		lst = nlst;
 	}
-	return (index);
+	*alst = NULL;
 }

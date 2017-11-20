@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_whitespace.c                                    :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/07 15:39:01 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/09 19:14:20 by wkhosa           ###   ########.fr       */
+/*   Created: 2017/11/20 14:10:15 by wkhosa            #+#    #+#             */
+/*   Updated: 2017/11/20 14:19:30 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_whitespace(const char *str)
-{
-	int		index;
-	int		k;
-	char	*whitespace;
+#include "libft.h"
 
-	whitespace = "\a\b\f\n\r\t\v ";
-	index = 0;
-	k = 0;
-	while (whitespace[k] != '\0')
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+{
+	t_list	*current;
+
+	current = lst;
+	while (current)
 	{
-		if (whitespace[k] == str[index])
-		{
-			k = 0;
-			index++;
-		}
-		k++;
+		f(current);
+		current = current->next;
 	}
-	return (index);
 }

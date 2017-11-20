@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_whitespace.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/07 15:39:01 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/09 19:14:20 by wkhosa           ###   ########.fr       */
+/*   Created: 2017/11/20 14:01:03 by wkhosa            #+#    #+#             */
+/*   Updated: 2017/11/20 14:09:39 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_whitespace(const char *str)
-{
-	int		index;
-	int		k;
-	char	*whitespace;
+#include "libft.h"
 
-	whitespace = "\a\b\f\n\r\t\v ";
-	index = 0;
-	k = 0;
-	while (whitespace[k] != '\0')
-	{
-		if (whitespace[k] == str[index])
-		{
-			k = 0;
-			index++;
-		}
-		k++;
-	}
-	return (index);
+void	ft_lstadd(t_list **alst, t_list *new)
+{
+	t_list	*lstbegin;
+
+	if (!new)
+		return ;
+	lstbegin = *alst;
+	*alst = new;
+	new->next = lstbegin;
 }

@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_whitespace.c                                    :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wkhosa <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/07 15:39:01 by wkhosa            #+#    #+#             */
-/*   Updated: 2017/09/09 19:14:20 by wkhosa           ###   ########.fr       */
+/*   Created: 2017/11/20 14:21:49 by wkhosa            #+#    #+#             */
+/*   Updated: 2017/11/20 17:24:27 by wkhosa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_whitespace(const char *str)
-{
-	int		index;
-	int		k;
-	char	*whitespace;
+#include "libft.h"
 
-	whitespace = "\a\b\f\n\r\t\v ";
-	index = 0;
-	k = 0;
-	while (whitespace[k] != '\0')
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+{
+	t_list	*fresh_list;
+
+	if (!(fresh_list = (t_list *)malloc(sizeof(t_list))))
+		return (NULL);
+	fresh_list = NULL;
+	while (lst)
 	{
-		if (whitespace[k] == str[index])
-		{
-			k = 0;
-			index++;
-		}
-		k++;
+		ft_lstaddlast(&fresh_list, f(lst));
+		lst = lst->next;
 	}
-	return (index);
+	return (fresh_list);
 }
